@@ -1,0 +1,108 @@
+/* general styles */
+body {
+  padding: 0;
+  top: 0;
+  overflow: hidden;
+  color: #ffffff;
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#content {
+  background: #3d4d64 url("../img/bg-blue-desktop.jpg") no-repeat fixed left top;
+}
+
+/* left column */
+#left-col {
+  padding-top: 15%;
+  padding-bottom: 30%;
+}
+
+#tagline {
+  color: #fde540;
+  font-family: 'Montserrat Alternates', Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+               0px 8px 13px rgba(0,0,0,0.1),
+               0px 18px 23px rgba(0,0,0,0.1);
+  margin-top: 5px;
+}
+
+.description {
+  margin-top: 35px;
+}
+
+.subheader {
+  color: #fde540;
+  font-size: 20px;
+  margin-top: 95px;
+  margin-bottom: 10px;
+}
+
+
+/* newsletter sign-up */
+.signup-field {
+  padding-right: 0;
+}
+
+#newsletter-signup-wrap .input-lg {
+  height: 59px;
+  margin-top: 2px;
+  border-radius: 4px;
+}
+
+#newsletter-signup-wrap .form-control::-moz-placeholder {
+  color: #70ac23;
+}
+
+button.btn-signup {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: medium none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+/* right column */
+#right-col {
+  padding-top: 10%;
+  bottom: 50%;
+}
+
+#phone {
+  z-index: 1000;
+  position: relative;
+}
+
+
+
+/* footer */
+#footer-social {
+  background-color: #fd2d3d;
+  padding: 40px 0;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.social-link,
+.social-link:hover,
+.social-link:active {
+  color: #ffffff;
+  font-family: 'Montserrat Alternates', Helvetica, sans-serif;
+  padding-right: 25px;
+}
+
+.social-icon {
+  padding-right: 10px;
+}
