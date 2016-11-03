@@ -1,55 +1,112 @@
 /* general styles */
+@font-face {
+  font-family: 'HeadlineTwoHPLHS';
+  src: url('../fonts/HeadlineTwoHPLHS.eot?#iefix') format('embedded-opentype'),  url('../fonts/HeadlineTwoHPLHS.woff') format('woff'), url('../fonts/HeadlineTwoHPLHS.ttf')  format('truetype'), url('../fonts/HeadlineTwoHPLHS.svg#HeadlineTwoHPLHS') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   padding: 0;
-  top: 0;
-  overflow: hidden;
   color: #ffffff;
   font-family: 'Montserrat', Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.2;
+  background: #3d4d64 url(../img/bg-blue-desktop.jpg) no-repeat fixed center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.top-content {
+  width: 90%;
+  min-width: 300px;
+  overflow: hidden;
+}
+
+@media (min-width: 992px) {
+  .top-content {
+    width: 86%;
+    min-width: 960px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+  #content {
+    padding-top: 10%;
+    padding-top: 16vh;
+  }
+}
+
+#logo {
+  max-width: 70%;
+}
+
+.phone-desktop {
+  width: 100%;
+}
+
+.phone-mobile {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .phone-desktop {
+    display: none;
+  }
+  .phone-mobile {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 a:hover {
   text-decoration: none;
 }
 
-#content {
-  background: #3d4d64 url("../img/bg-blue-desktop.jpg") no-repeat fixed left top;
-}
-
 /* left column */
 #left-col {
-  padding-top: 15%;
-  padding-bottom: 30%;
+  padding-top: 5%;
 }
 
 #tagline {
   color: #fde540;
   font-family: 'Montserrat Alternates', Helvetica, sans-serif;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 2vw;
   text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
                0px 8px 13px rgba(0,0,0,0.1),
                0px 18px 23px rgba(0,0,0,0.1);
-  margin-top: 5px;
+  margin-top: 1%;
 }
 
 .description {
-  margin-top: 35px;
+  margin-top: 4%;
+  font-size: 1.4vw;
+  line-height: 1.4;
 }
 
 .subheader {
   color: #fde540;
   font-size: 20px;
-  margin-top: 95px;
-  margin-bottom: 10px;
+  font-size: 1.25vw;
+  margin-top: 10%;
+  margin-bottom: 1.7%;
 }
 
-
 /* newsletter sign-up */
-.signup-field {
-  padding-right: 0;
+@media (min-width: 992px) {
+  .signup-field {
+    padding-right: 0;
+  }
 }
 
 #newsletter-signup-wrap .input-lg {
@@ -62,37 +119,44 @@ a:hover {
   color: #70ac23;
 }
 
-button.btn-signup {
-  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+.btn-signup {
   border: medium none;
-  box-shadow: none;
-  margin: 0;
+  margin-top: 2px;
   padding: 0;
+  background: #80b91d;
+  font-family: 'HeadlineTwoHPLHS', 'Open Sans Condensed', sans-serif;
+  font-size: 1.6vw;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  height: 56px;
+  text-shadow: 0 2px 0 #628e15;
+  -webkit-box-shadow: 0 3px 0 0 #628e15;
+  -moz-box-shadow: 0 3px 0 0 #628e15;
+  box-shadow: 0 3px 0 0 #628e15;
+  letter-spacing: .1em;
+  font-weight: normal;
 }
 
-
-
-
-/* right column */
-#right-col {
-  padding-top: 10%;
-  bottom: 50%;
+.btn-signup:focus,
+.btn-signup:hover {
+  background-color: #85c427;
 }
-
-#phone {
-  z-index: 1000;
-  position: relative;
-}
-
-
 
 /* footer */
 #footer-social {
   background-color: #fd2d3d;
-  padding: 40px 0;
-  bottom: 0;
-  position: absolute;
+  padding: 1.9% 0;
   width: 100%;
+  margin-top: -3%;
+}
+
+@media (max-width: 991px) {
+  #footer-social {
+    margin-top: 0;
+    position: fixed;
+    bottom: 0;
+  }
 }
 
 .social-link,
@@ -105,4 +169,89 @@ button.btn-signup {
 
 .social-icon {
   padding-right: 10px;
+}
+
+@media (max-width: 1400px) {
+  .btn-signup {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  .top-content {
+    width: 98%;
+  }
+  #left-col {
+    text-align: center;
+  }
+  #logo {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 0 5px;
+  }
+  #tagline {
+    font-size: 3.2vw;
+  }
+  .description {
+    font-size: 2vw;
+  }
+  .subheader {
+    font-size: 2.2vw;
+  }
+  .btn-signup {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #tagline {
+    font-size: 24px;
+  }
+  .description {
+    font-size: 18px;
+  }
+  .subheader {
+    font-size: 16px;
+  }
+  .social-icons {
+    text-align: center;
+    font-size: 2.4vw;
+  }
+  .social-icon {
+    padding-right: 1%;
+  }
+  .social-link {
+    padding-right: 3%;
+  }
+  #newsletter-signup-wrap .input-lg {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  #tagline {
+    font-size: 20px;
+  }
+  .description {
+    font-size: 16px;
+  }
+  .subheader {
+    font-size: 16px;
+    margin-bottom: 3%;
+  }
+  .social-icons {
+    font-size: 14px;
+  }
+
+}
+
+@media (max-width: 320px) {
+  #tagline {
+    font-size: 17px;
+  }
+  .description {
+    font-size: 15px;
+    line-height: 1.2;
+  }
 }
