@@ -154,6 +154,16 @@ a:hover {
   background-color: #85c427;
 }
 
+.btn-signup.active.focus,
+.btn-signup.active:focus,
+.btn-signup.active:hover,
+.btn-signup.focus:active,
+.btn-signup:active:focus,
+.btn-signup:active:hover {
+  background-color: #628e15;
+}
+
+
 /* footer */
 #footer-social {
   background-color: #fd2d3d;
