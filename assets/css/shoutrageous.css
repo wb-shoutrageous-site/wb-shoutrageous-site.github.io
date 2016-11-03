@@ -178,6 +178,10 @@ a:hover {
   margin-top: -3%;
 }
 
+#footer-social .container {
+    z-index: 2;
+}
+
 @media (max-width: 991px) {
   #footer-social {
     margin-top: 0;
