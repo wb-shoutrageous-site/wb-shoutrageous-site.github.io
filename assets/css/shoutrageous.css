@@ -75,7 +75,7 @@ body {
   }
   .phone-mobile {
     display: block;
-    margin: 50px auto 0 auto
+    margin: 20px auto 0 auto
   }
 }
 
@@ -114,12 +114,16 @@ a:hover {
 }
 
 .cursive {
-  margin-top: 20%;
   color: #fde540;
   font-family: 'Pacifico', Helvetica, sans-serif ;
-  font-size: 30px;
+  font-size: 2vw;
+}
+
+.guess {
+  margin-top: 20%;
   text-align: right;
 }
+
 /* newsletter sign-up */
 @media (min-width: 992px) {
   .signup-field {
@@ -178,12 +182,6 @@ a:hover {
   background-color: #628e15;
 }
 
-
-/* thank you page */
-
-
-
-
 /* footer */
 #footer-social {
   background-color: #fd2d3d;
@@ -199,6 +197,7 @@ a:hover {
 @media (max-width: 991px) {
   #footer-social {
     margin-top: 0;
+    padding: 3% 0;
     position: fixed;
     bottom: 0;
   }
@@ -247,6 +246,11 @@ a:hover {
   .subheader {
     font-size: 2.2vw;
   }
+  .guess {
+    margin-top: 15%;
+    text-align: center;
+    font-size: 5vw;
+  }
   .btn-signup {
     width: 60%;
     margin: 0 auto;
@@ -291,6 +295,9 @@ a:hover {
     font-size: 16px;
     margin-bottom: 3%;
   }
+  .guess {
+    font-size: 7vw;
+  }
   .social-icons {
     font-size: 14px;
   }
@@ -303,8 +310,5 @@ a:hover {
   .description {
     font-size: 15px;
     line-height: 1.2;
-  }
-  #footer-social {
-    padding: 3% 0;
   }
 }
