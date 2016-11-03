@@ -160,6 +160,8 @@ a:hover {
   background-color: #85c427;
 }
 
+.btn-signup.active,
+.btn-signup:active,
 .btn-signup.active.focus,
 .btn-signup.active:focus,
 .btn-signup.active:hover,
