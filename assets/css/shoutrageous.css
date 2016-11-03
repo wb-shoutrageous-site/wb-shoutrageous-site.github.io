@@ -113,6 +113,13 @@ a:hover {
   margin-bottom: 1.7%;
 }
 
+.cursive {
+  margin-top: 20%;
+  color: #fde540;
+  font-family: 'Pacifico', Helvetica, sans-serif ;
+  font-size: 30px;
+  text-align: right;
+}
 /* newsletter sign-up */
 @media (min-width: 992px) {
   .signup-field {
@@ -170,6 +177,11 @@ a:hover {
 .btn-signup:active:hover {
   background-color: #628e15;
 }
+
+
+/* thank you page */
+
+
 
 
 /* footer */
