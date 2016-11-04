@@ -33,14 +33,14 @@
       <div class="subheader">We want to offer you coveted swag and awesome updates!</div>
       <!-- start newsletter signup wrap -->
       <div id="newsletter-signup-wrap" class="newsletter-signup">
-        <form action="https://www.nl.telepixtv.com/subscribev2.php" method="post" role="form">
+        <form action="https://www.nl.telepixtv.com/subscribev2.php" method="post" role="form" name="newslettersignup">
           <fieldset>
             <div class="alert alert-danger" style="display: none;"></div>
             <div class="row">
               <div class="col-xs-12 col-md-8 signup-field">
                 <div class="form-group">
-                  <label for="newsletterEmail" class="sr-only">Your Email Address</label>
-                  <input id="newsletterEmail" class="form-control input-lg" name="email" value="" placeholder="Your Email Address" maxlength="50" type="email"/>
+                  <label for="email" class="sr-only">Your Email Address</label>
+                  <input id="email" class="form-control input-lg" name="email" value="" placeholder="Your Email Address" maxlength="50" type="email"/>
                 </div>
               </div>
               <div class="col-xs-12 col-md-4">
@@ -80,16 +80,11 @@
 </div><!-- end content -->
 <!-- Bootstrap JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<!-- Validation JS -->
-<script type="text/javascript">
-$('#newsletter-signup-wrap form').on('validate', function(event, validation) {
-    if($('#newsletterEmail').val() == "") {
-        validation.hasError = true;
-        validation.errors += '<li>you should feel bad.</li>';
-    }
-});
-</script>
 
+<!-- Validation JS -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.validate.min.js"></script>
+<script src="assets/js/form-validation.js"></script>
 
 <!-- Google Analytics -->
 <script>
