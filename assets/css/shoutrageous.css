@@ -147,6 +147,13 @@ a:hover {
   color: #70ac23;
 }
 
+#email-error {
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.6;
+    padding-top: 10px;
+}
+
 .btn-signup {
   border: medium none;
   margin-top: 2px;
