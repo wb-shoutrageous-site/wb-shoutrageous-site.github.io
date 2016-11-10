@@ -85,24 +85,28 @@ a:hover {
 
 /* left column */
 #left-col {
-  padding-top: 5%;
 }
 
 #tagline {
   color: #fde540;
   font-family: 'Montserrat Alternates', Helvetica, sans-serif;
   font-weight: 700;
-  font-size: 2vw;
+  font-size: 1.8vw;
   text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
                0px 8px 13px rgba(0,0,0,0.1),
                0px 18px 23px rgba(0,0,0,0.1);
-  margin-top: 1%;
+}
+
+.header {
+  margin-top:5%;
+  font-size: 1.5vw;
+  font-weight: 700;
 }
 
 .description {
-  margin-top: 4%;
-  font-size: 1.4vw;
-  line-height: 1.4;
+  margin-top: 3%;
+  font-size: 1.0vw;
+  line-height: 1.2;
 }
 
 .subheader {
@@ -148,10 +152,10 @@ a:hover {
 }
 
 #email-error {
-    font-size: 14px;
-    font-weight: 400;
-    opacity: 0.6;
-    padding-top: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.6;
+  padding-top: 10px;
 }
 
 .btn-signup {
@@ -222,7 +226,7 @@ a:hover {
 }
 
 .social-icon {
-  padding-right: 10px;
+  padding-right: 5px;
 }
 
 @media (max-width: 1400px) {
@@ -240,12 +244,15 @@ a:hover {
   }
   #logo {
     max-width: 540px;
-    margin: 0 auto;
+    margin: 2% auto 0;
     padding: 0 5px;
   }
   #tagline {
     margin-top: 10px;
     font-size: 3.2vw;
+  }
+  .header {
+    font-size: 2.5vw;
   }
   .description {
     font-size: 2.2vw;
@@ -269,22 +276,29 @@ a:hover {
     text-align: center;
   }
   .social-icon {
-    padding-right: 1%;
-  }
+      padding-right: 0;
+    }
   .social-link {
     padding-right: 3%;
   }
+  .social-icons.download {
+      padding-top: 10px;
+  }
+
 }
 
 @media (max-width: 768px) {
   #tagline {
     font-size: 24px;
   }
+  .header {
+    font-size: 20px;
+  }
   .description {
     font-size: 18px;
   }
   .subheader {
-    font-size: 16px;
+    font-size: 18px;
   }
   .social-icons {
     font-size: 2.4vw;
@@ -295,11 +309,14 @@ a:hover {
   #tagline {
     font-size: 20px;
   }
+  .header {
+    font-size: 18px;
+  }
   .description {
-    font-size: 16px;
+    font-size: 14px;
   }
   .subheader {
-    font-size: 16px;
+    font-size: 17px;
     margin-bottom: 3%;
   }
   .guess {
@@ -314,8 +331,5 @@ a:hover {
   #tagline {
     font-size: 17px;
   }
-  .description {
-    font-size: 15px;
-    line-height: 1.2;
-  }
+
 }
