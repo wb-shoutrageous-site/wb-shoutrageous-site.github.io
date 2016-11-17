@@ -36,10 +36,8 @@ a:hover {
   overflow: hidden;
 }
 
-.giphy {
+img.img-gif {
     margin: 0 auto;
-    padding-top: 20%;
-    text-align: center;
 }
 
 @media (min-width: 992px) {
