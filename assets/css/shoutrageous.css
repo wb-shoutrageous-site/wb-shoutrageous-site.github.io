@@ -250,6 +250,21 @@ img.img-gif {
   padding-right: 5px;
 }
 
+.footer-terms {
+  padding-top: 30px;
+}
+
+.terms {
+    color: #75151c;
+    font-size: 70%;
+}
+
+.terms a {
+    color: #75151c;
+    padding-right: 10px;
+    text-decoration: underline;
+}
+
 @media (max-width: 1400px) {
   #content {
     padding-top: 10vh;
@@ -323,6 +338,9 @@ img.img-gif {
   }
   .social-icons.download {
       padding-top: 10px;
+  }
+  .footer-terms {
+    text-align: center;
   }
 
 }
