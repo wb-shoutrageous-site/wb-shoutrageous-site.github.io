@@ -256,7 +256,7 @@ img.img-gif {
 
 .terms {
     color: #75151c;
-    font-size: 70%;
+    font-size:70%;
 }
 
 .terms a {
@@ -384,15 +384,15 @@ img.img-gif {
   .social-icons {
     font-size: 14px;
   }
+  .terms {
+    font-size:10px !important;
+    line-height: 110%;
+  }
 }
 
 @media (max-width: 320px) {
   #tagline {
     font-size: 17px;
   }
-  p.terms {
-    margin-bottom: 3px;
-    font-size:10px;
-    line-height:135%;
-  }
+
 }
