@@ -108,6 +108,7 @@ img.img-gif {
 
 .header {
   margin-top:5%;
+  margin-bottom:2%;
   font-size: 1.5vw;
   font-weight: 700;
 }
@@ -126,13 +127,13 @@ img.img-gif {
   margin-bottom: 1.7%;
 }
 
-.arrow-icon {
-  padding-left:10px;
+.download {
+  width: 200px;
 }
 
 @media (max-width: 992px) {
-  .arrow-icon {
-    display:none;
+  .download {
+    width: 150px;
   }
 }
 
@@ -251,7 +252,7 @@ img.img-gif {
 }
 
 .footer-terms {
-  padding-top: 30px;
+  padding-top: 15px;
 }
 
 .terms {
@@ -340,6 +341,7 @@ img.img-gif {
       padding-top: 10px;
   }
   .footer-terms {
+    padding-top: 10px;
     text-align: center;
   }
 
@@ -389,5 +391,9 @@ img.img-gif {
   #tagline {
     font-size: 17px;
   }
-
+  .terms {
+    margin-bottom: 3px;
+    font-size: 50%;
+    line-height: 150%;
+  }
 }
