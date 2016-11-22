@@ -390,9 +390,9 @@ img.img-gif {
   #tagline {
     font-size: 17px;
   }
-  .terms {
+  p.terms {
     margin-bottom: 3px;
-    font-size: 50%;
-    line-height: 150%;
+    font-size:10px;
+    line-height:135%;
   }
 }
