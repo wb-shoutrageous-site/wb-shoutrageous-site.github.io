@@ -265,6 +265,10 @@ img.img-gif {
     text-decoration: underline;
 }
 
+.fb-share-button.fb_iframe_widget {
+    padding-right: 10px;
+}
+
 @media (max-width: 1400px) {
   #content {
     padding-top: 10vh;
