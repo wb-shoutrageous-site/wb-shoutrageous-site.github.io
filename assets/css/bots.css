@@ -1,0 +1,143 @@
+/* bots styles */
+#body-bots #agetext {
+    margin-top: 5px;
+    font-size: 12px;
+}
+input, textarea {
+    color: #70ac23;
+}
+li.clearfix {
+  clear: both;
+}
+#body-bots label {
+    margin-top: 15px;
+}
+#body-bots .button-submit {
+    color: #fff;
+    width: 250px !important;
+    margin: 20px auto;
+}
+#body-bots .disclaimer-text {
+    margin: 20px 0 50px 0;
+    font-size: 12px;
+}
+#body-bots textarea {
+    width: 100%;
+    font-style: italic;
+}
+#body-bots form fieldset ul,
+#body-bots .page-content form fieldset ul {
+    margin-top: 10px;
+    clear: none;
+    list-style-type: none;
+}
+#body-bots form fieldset ul {
+    padding: 0;
+    margin: 0;
+}
+#body-bots form fieldset li {
+    list-style-type: none;
+}
+#body-bots form li div {
+    width: auto;
+}
+#body-bots .page-content input[type="text"],
+#body-bots .page-content input[type="password"],
+.page-content #body-bots input[type="text"],
+.page-content #body-bots input[type="password"] {
+    width: 100%;
+    height: 59px;
+    padding: 16px;
+    font-size: 16px;
+    font-style: italic;
+  border-radius: 5px;
+}
+#body-bots .field-select select {
+    width: 100%;
+    height: 59px;
+    padding-top: 0;
+    padding-left: 10px;
+    background: transparent;
+    border: 1px solid #a3a3a3;
+    border-radius: 5px;
+    -webkit-appearance: none;
+}
+#body-bots form fieldset ul li.field {
+    padding: 0 5px 5px 0;
+    margin: 0 10px 10px 0;
+}
+#body-bots form fieldset li {
+    list-style-type: none;
+}
+#body-bots form fieldset ul li.field {
+    padding: 0 5px 5px 0;
+    margin: 0 10px 10px 0;
+}
+.input-half-width input,
+.input-full-width input,
+.input-quarter-width input,
+.input-full-width textarea {
+    padding: 17px;
+    width: 100%;
+    min-height: 59px;
+    border: 1px solid #929292;
+    border-radius: 5px;
+}
+form fieldset li.input-full-width {
+    clear: both;
+}
+form fieldset li.input-quarter-width {
+    float: left;
+    width: 22%;
+}
+@media (min-width: 600px) {
+    #body-bots form fieldset li.input-quarter-width {
+        width: 30%;
+    }
+}
+form fieldset li.input-half-width {
+    float: left;
+    width: 47%;
+}
+#body-bots #logo {
+    width: 100%;
+}
+#body-bots #tagline {
+    font-size: 100%;
+}
+#body-bots h1 {
+    font-weight: 700;
+}
+#body-bots .excerpt {
+    margin-top: 30px;
+    color: #fde540;
+}
+#body-bots .header-section {
+    padding: 10px 20% 10px 20%;
+}
+.realcontest-thankyou {
+  display: none;
+}
+@media (max-width: 599px) {
+    #body-bots .header-section {
+        padding: 0;
+    }
+    #body-bots h1 {
+        font-size: 30px;
+    }
+    #body-bots .text {
+            font-size: 85%;
+        }
+    #body-bots label {
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    #body-bots form fieldset li.input-half-width,
+    #body-bots form fieldset li.input-quarter-width {
+        width: 100%;
+    }
+    #body-bots form fieldset ul li.field {
+        padding-right: 0;
+        margin-right: 0;
+    }
+}
