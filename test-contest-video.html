@@ -672,7 +672,7 @@ form fieldset li.input-half-width {
   </div><!-- end realcontest-form-container -->
 
   <div class="realcontest-thankyou"><!-- start realcontest-thankyou -->
-  <h1>Thank you for entering</h1>
+    <h1>Thank you for entering</h1>
   </div><!-- end realcontest-thankyou -->
 
 
@@ -680,14 +680,11 @@ form fieldset li.input-half-width {
 
 
 <script>
-var wbq = wbq || [];
-wbq.push(function realcontestFunction() {
-  require(['jquery'], function($) {
+function realcontestFunction() {
     if (location.search == "?submitted") {
       $(".realcontest-form-container").hide();
       $(".realcontest-thankyou").show();
     }
-  });
 });
 </script>
 
