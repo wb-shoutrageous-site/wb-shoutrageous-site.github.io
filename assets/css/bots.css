@@ -25,7 +25,7 @@ input, textarea {
 li.clearfix {
   clear: both;
 }
-#body-bots.top-content {
+#body-bots .top-content {
    padding-bottom: 50px;
 }
 #body-bots label {
