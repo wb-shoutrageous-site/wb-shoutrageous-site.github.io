@@ -700,13 +700,12 @@ function isValidAudioFormat(theFile) {
 $('#bots-form').on('submit', function () {
   var formIsValid = mainFormValid();
   if (formIsValid) {
-    $('#content-main-split').empty();
     $('.excerpt').remove();
     $('.small').remove();
     $('#content-main-split').html('<h1 class="text-center">In progress...</h1>');
 
     $('.submit-iframe').one('load', function () {
-      $('#content-main-split').empty();
+      alert('iframe loaded!');
       $('#content-main-split').html('<h1 class="thankyou text-center">Thank you! You Have Successfully Signed Up.</h1>');
     });
   }
