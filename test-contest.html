@@ -38,33 +38,29 @@
 <link rel="stylesheet" type="text/css" media="screen" href="http://shoutrageous.com/assets/css/shoutrageous.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="http://shoutrageous.com/assets/css/fontello.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="http://shoutrageous.com/assets/css/bots.css" />
-
-
 </head>
 
 <body id="body-bots">
-<div id="">
-  <div class="container top-content" >
-    <div class="header-section" align="center">
+  <div>
+    <div class="container top-content">
+      <div class="header-section" align="center">
         <div id="logo">
-            <a href="http://shoutrageous.com/"><img class="img-responsive" src="assets/img/logo-shoutrageous.png"></a>
-            <div id="tagline">The Game for LOUDMOUTHS and KNOW-IT-ALLS</div>
+          <a href="http://shoutrageous.com/"><img class="img-responsive" src="assets/img/logo-shoutrageous.png"></a>
+          <div id="tagline">The Game for LOUDMOUTHS and KNOW-IT-ALLS</div>
         </div>
 
         <h1>Here's Your Chance to Win $1,000 & a Trip to L.A. to Play Shoutrageous with 'The Real' Hosts!</h1>
       	<div class="text">
-            <div class="title">Enter with your favorite person to play Shoutrageous to win a chance for a round-trip ticket to L.A. to see "The Real" – and to play Shoutrageous with the hosts for the chance to win $1,000!</div>
-            <div class="excerpt">Enter Below for Your Chance</div>
-            <p class="small"><em>* Required Fields</em></p>
-            <div id="ALERT"></div>
+          <div class="title">Enter with your favorite person to play Shoutrageous to win a chance for a round-trip ticket to L.A. to see "The Real" – and to play Shoutrageous with the hosts for the chance to win $1,000!</div>
+          <div class="excerpt">Enter Below for Your Chance</div>
+          <p class="small"><em>* Required Fields</em></p>
+          <div id="ALERT"></div>
         </div>
-    </div>
+      </div>
 
-
-<div id="content-main-split">
-       <div class="form-wrap content-right page-content">
-         <form method="POST" action="http://beontheshow.therealtalkshow.com/act.cfm" enctype="multipart/form-data" name="mainForm" onsubmit="return mainFormValid(this.form)" />
-
+      <div id="content-main-split">
+        <div class="form-wrap content-right page-content">
+        <form id="bots-form" method="POST" name="mainForm" action="http://beontheshow.therealtalkshow.com/act.cfm" enctype="multipart/form-data" target="submit-iframe" />
          <fieldset>
            <input type="hidden" name="PlugID" value="1507" />
            <input type="hidden" name="IDX" value="respond.save" />
@@ -96,7 +92,7 @@
              <li class="input-half-width field required">
                <label for="hPhone">Home Phone*</label>
                <div>
-                 <input type="text" name="hPhone" value="" maxlength="50" placeholder="Home Phone*" maxlength="50" />
+                 <input type="text" name="hPhone" value="" maxlength="50" placeholder="Home Phone*" />
                </div>
              </li>
            </ul>
@@ -514,266 +510,215 @@
          <p class="disclaimer-text"> By submitting your photos, stories, videos and/or publishing content or information on the "The Real" website, you grant "The Real" a non-exclusive, transferable, royalty-free, worldwide gratis license to use, reproduce and broadcast such photos, stories, video, content or information, including but not limited to your first and last name, hometown (city/state), social media handle, photo and/or video, name, likeness, image, and/or voice; my on and off-camera interview(s), story(ies) and performance; other material provided by you, (e.g., biographical material, photographs, videotape(s), film prints, artwork, etc., all of which you hereby represent and warrant that you own exclusively) and your surroundings (to the extent such occurs in your home or place where you have possession) in and in connection with the The Real television series and website, in perpetuity, in any and all media. You represent and warrant that you are at least 18 years of age and own or control the copyright to any photos you post, including your profile picture, and that you are authorized to consent to use of the materials by "The Real." </p>
        </div>
      </div>
-
-
+     <iframe name="submit-iframe" class="submit-iframe" width="0" height="0" scrolling="no" style="display:none;"></iframe>
   </div><!-- end container -->
 </div><!-- end content -->
 
 <!-- Plugger JS -->
-
 <script>
-    function getUrlVars(){
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+/* custom trim() function
+ex - form.field.value.trim()
+*/
+String.prototype.trim = function() {
+  a = this.replace(/^\s+/, '');
+  return a.replace(/\s+$/, '');
+};
 
-    for(var i = 0; i < hashes.length; i++){
-    hash = hashes[i].split('=');
-    vars.push(hash[0]);
-    vars[hash[0]] = hash[1];
+function mainFormValid() {
+  if (document.mainForm.fName.value.trim().length == 0) {
+    alert('First name is a required field.');
+    document.mainForm.fName.className += "error";
+    return false;
+  }
+
+  if (document.mainForm.lName.value.trim().length == 0) {
+    alert('Last name is a required field.');
+    document.mainForm.lName.className += "error";
+    return false;
+  }
+
+  if (document.mainForm.email.value.length > 0) {
+    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    var address = document.mainForm.email.value;
+    if(reg.test(address) == false) {
+      alert('Please enter valid Email Address');
+      document.mainForm.email.className += "error";
+      return false;
     }
-    return vars;
+  } else {
+    alert('Email is a required field.');
+    document.mainForm.email.className += "error";
+    return false;
+  }
+
+  if (document.mainForm.hPhone.value.length == 0 || document.mainForm.hPhone.value == "XXX-XXX-XXXX") {
+    alert('Home phone is a required field.');
+    document.mainForm.hPhone.className += "error";
+    return false;
+  }
+
+  if (document.mainForm.address1.value.trim().length == 0) {
+    alert('Street Address is a required field.');
+    document.mainForm.address1.className += "error";
+    return false;
+  }
+
+  if (document.mainForm.city.value.trim().length == 0) {
+    alert('City is a required field.');
+    document.mainForm.city.className += "error";
+    return false;
+  }
+
+  if (document.mainForm.country.value.length == 0) {
+    alert('Country is a required field.');
+    document.mainForm.country.className += "error";
+    return false;
+  }
+
+  if (document.mainForm.zip.value.trim().length == 0) {
+    alert('Zip is a required field.');
+    document.mainForm.zip.className += "error";
+    return false;
+  }
+
+  if (document.mainForm.age.value.trim().length > 0) {
+     var ValidChars = "0123456789";
+     var IsNumber   =true;
+     var Char;
+     var sText = document.mainForm.age.value;
+
+     for (i = 0; i < sText.length && IsNumber == true; i++) {
+       Char = sText.charAt(i);
+       if (ValidChars.indexOf(Char) == -1) {
+         IsNumber = false;
+       }
+     }
+
+     if (!IsNumber) {
+       var qText = "Age value needs to be numeric.";
+       document.mainForm.age.className += "error";
+       alert(qText);
+       return false;
+     }
+  } else {
+    alert('Age is a required field.');
+    document.mainForm.age.className += "error";
+    return false;
+  }
+
+  if (document.mainForm.add_upload_1983.value.length == 0) {
+    alert('Upload your photo is a required field.');
+    return false;
+  } else if (!((isValidPhotoFormat (document.mainForm.add_upload_1983.value)))) {
+    alert('Upload your photo is not a valid Photo Format.');
+    return false;
+  }
+
+  if (document.mainForm.add_text_1984.value.length == 0) {
+    alert('Public social handles (Instagram, Twitter, or Facebook) is a required field.');
+    return false;
+  }
+
+  if (document.mainForm.story.value.length > 1500) {
+    alert('Please limit your story to 1500 characters or less.');
+    document.mainForm.story.className += "error";
+    return false;
+  }
+
+  if (document.mainForm.story.value.trim().length == 0) {
+    alert('The story is a required field.');
+    document.mainForm.story.className += "error";
+    return false;
+  }
+
+  document.getElementById('sub_image').disabled = true;
+  return true;
+}
+
+function isValidVideoFormat(theFile) {
+  var r=false;
+  var myAllowExt=["avi","mpg","mpeg","mp4","m4v","wmv","mov","qt","rm","asf","flv","3gp","3g2"];
+  for (x in myAllowExt){
+    var temp1 = myAllowExt[x];
+    var temp = "theFile.toLowerCase().search(/." + temp1 + "$/)";
+    if(eval(temp)>0){
+      r = true;
     }
+  }
+  return r;
+}
 
-    /* custom trim() function
-    ex - form.field.value.trim()
-    */
-    String.prototype.trim = function() {
-    a = this.replace(/^\s+/, '');
-    return a.replace(/\s+$/, '');
-    };
+function isValidPhotoFormat(theFile) {
+  var r=false;
+  var myAllowExt=["jpg","jpe","jpeg","bmp","gif","png","tif","tiff"];
+  for (x in myAllowExt){
+    var temp1 = myAllowExt[x];
+    var temp = "theFile.toLowerCase().search(/." + temp1 + "$/)";
+    if(eval(temp)>0){
+      r = true;
+    }
+  }
+  return r;
+}
 
-    	function chkFIELD(elem){
-    	var str = elem.value
-    	var fieldName = elem.name;
+function isValidDocumentFormat(theFile) {
+  var r=false;
+  var myAllowExt=["doc","docx","txt","pdf","wpd"];
+  for (x in myAllowExt){
+    var temp1 = myAllowExt[x];
+    var temp = "theFile.toLowerCase().search(/." + temp1 + "$/)";
+    if(eval(temp)>0){
+      r = true;
+    }
+  }
+  return r;
+}
 
-    		switch (fieldName){
-    		   case "dob" :
-    		      var defaultText = "MM/DD/YYYY";
-    		      break;
-    		   default :
-    		      var defaultText = "XXX-XXX-XXXX";
-    		      break;
-    		}
-
-    		if (elem.value.length == 0){
-    		   elem.value = defaultText;
-    		}
-
-    		if (str == defaultText){
-    		   elem.value='';
-    		   elem.focus();
-    		}
-
-    	}
-
-
-        function friendSend(theFRM) {
-     		var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-     		var address = document.friend.FriendEmail.value;
-    		if (theFRM.FriendName.value.length == 0) {
-    			alert('Friend name is a required field.');
-    			return false;
-    		};
-
-    		if(reg.test(theFRM.FriendEmail.value) == false) {
-      			alert('Please enter valid Friend's Email Address');
-      			return false;
-    		}
-    		if (theFRM.FromName.value.length == 0) {
-    			alert('Your name is a required field.');
-    			return false;
-    		};
-    		if(reg.test(theFRM.FromEmail.value) == false) {
-     			alert('Please enter valid Email Address');
-     			return false;
-    		}
-
-    		return true;
-    	}
-
-
-    	function mainFormValid(){
-    		if (document.mainForm.fName.value.trim().length == 0) {
-    			alert('First name is a required field.');
-    			document.mainForm.fName.className += "error";
-    			return false;
-    		};
-    		if (document.mainForm.lName.value.trim().length == 0) {
-    			alert('Last name is a required field.');
-    			document.mainForm.lName.className += "error";
-    			return false;
-    		};
-    		if (document.mainForm.email.value.length > 0) {
-    			var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    	 		var address = document.mainForm.email.value;
-    	  			if(reg.test(address) == false) {
-    	     			alert('Please enter valid Email Address');
-    				document.mainForm.email.className += "error";
-    					//document.mainForm.email.style.background = 'Yellow';
-    	     			return false;
-    	  			}
-    		}else{
-    			alert('Email is a required field.');
-    			document.mainForm.email.className += "error";
-    			return false;
-    		};
-    		if (document.mainForm.hPhone.value.length == 0 || document.mainForm.hPhone.value == "XXX-XXX-XXXX") {
-    			alert('Home phone is a required field.');
-    			document.mainForm.hPhone.className += "error";
-    			return false;
-    		};
-    		if (document.mainForm.address1.value.trim().length == 0) {
-    			alert('Street Address is a required field.');
-    			document.mainForm.address1.className += "error";
-    			return false;
-    		};
-    		if (document.mainForm.city.value.trim().length == 0) {
-    			alert('City is a required field.');
-    			document.mainForm.city.className += "error";
-    			return false;
-    		};
-    		if (document.mainForm.country.value.length == 0) {
-    			alert('Country is a required field.');
-    			document.mainForm.country.className += "error";
-    			return false;
-    		};
-    		if (document.mainForm.zip.value.trim().length == 0) {
-    			alert('Zip is a required field.');
-    			document.mainForm.zip.className += "error";
-    			return false;
-    		};
-    		if (document.mainForm.age.value.trim().length > 0) {
-    			   var ValidChars = "0123456789";
-    			   var IsNumber   =true;
-    			   var Char;
-    			   var sText = document.mainForm.age.value;
-
-    			   for (i = 0; i < sText.length && IsNumber == true; i++)
-    			      {
-    			      Char = sText.charAt(i);
-    			      if (ValidChars.indexOf(Char) == -1)
-    			         {
-    			         IsNumber = false;
-    			         }
-    			      }
-    				if (!IsNumber) {
-    					var qText = "Age value needs to be numeric.";
-    					document.mainForm.age.className += "error";
-    					alert(qText);
-    					return false;
-    				}
-
-    		}else{
-    			alert('Age is a required field.');
-    			document.mainForm.age.className += "error";
-    			return false;
-    		};
-
-
-
-    			if (document.mainForm.add_upload_1983.value.length == 0) {
-    				alert('Upload your photo is a required field.');
-    				return false;
-    			}
-    			else if (!((isValidPhotoFormat (document.mainForm.add_upload_1983.value)))) {
-    				alert('Upload your photo is not a valid Photo Format.');
-    				return false;
-    			}
-
-    			if (document.mainForm.add_text_1984.value.length == 0) {
-    				alert('Public social handles (Instagram, Twitter, or Facebook) is a required field.');
-    				return false;
-    			}
-
-
-
-
-    		if (document.mainForm.story.value.length > 1500) {
-    			alert('Please limit your story to 1500 characters or less.');
-    			document.mainForm.story.className += "error";
-    			return false;
-    		};
-    		if (document.mainForm.story.value.trim().length == 0) {
-    			alert('The story is a required field.');
-    			document.mainForm.story.className += "error";
-    			return false;
-    		};
-
-
-    	document.getElementById('sub_image').disabled = true;
-    	return true;
-    	}
-    	function isValidVideoFormat (theFile) {
-    		var r=false;
-    		var myAllowExt=["avi","mpg","mpeg","mp4","m4v","wmv","mov","qt","rm","asf","flv","3gp","3g2"];
-    		for (x in myAllowExt){
-    			var temp1 = myAllowExt[x];
-    			var temp = "theFile.toLowerCase().search(/." + temp1 + "$/)";
-    			if(eval(temp)>0){
-    				r = true;
-    			}
-    		}
-    		return r;
-    	}
-    	function isValidPhotoFormat (theFile) {
-    		var r=false;
-    		var myAllowExt=["jpg","jpe","jpeg","bmp","gif","png","tif","tiff"];
-    		for (x in myAllowExt){
-    			var temp1 = myAllowExt[x];
-    			var temp = "theFile.toLowerCase().search(/." + temp1 + "$/)";
-    			if(eval(temp)>0){
-    				r = true;
-    			}
-    		}
-    		return r;
-    	}
-    	function isValidDocumentFormat (theFile) {
-    		var r=false;
-    		var myAllowExt=["doc","docx","txt","pdf","wpd"];
-    		for (x in myAllowExt){
-    			var temp1 = myAllowExt[x];
-    			var temp = "theFile.toLowerCase().search(/." + temp1 + "$/)";
-    			if(eval(temp)>0){
-    				r = true;
-    			}
-    		}
-    		return r;
-    	}
-    	function isValidAudioFormat (theFile) {
-    		var r=false;
-    		var myAllowExt=["mp3","wma"];
-    		for (x in myAllowExt){
-    			var temp1 = myAllowExt[x];
-    			var temp = "theFile.toLowerCase().search(/." + temp1 + "$/)";
-    			if(eval(temp)>0){
-    				r = true;
-    			}
-    		}
-    		return r;
-    	}
+function isValidAudioFormat(theFile) {
+  var r=false;
+  var myAllowExt=["mp3","wma"];
+  for (x in myAllowExt){
+    var temp1 = myAllowExt[x];
+    var temp = "theFile.toLowerCase().search(/." + temp1 + "$/)";
+    if(eval(temp)>0){
+      r = true;
+    }
+  }
+  return r;
+}
 </script>
-
-
-<!-- Bootstrap JS -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Validation JS -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.validate.min.js"></script>
 <script src="assets/js/form-validation.js"></script>
 
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-
+<script>
+$('#bots-form').on('submit', function () {
+  var formIsValid = mainFormValid();
+  if (formIsValid) {
+    $('.submit-iframe').one('load', function () {
+      $('.excerpt').remove();
+      $('.small').remove();
+      $('#content-main-split').empty();
+      $('#content-main-split').html('<h1 class="thankyou text-center">Thank you! You Have Successfully Signed Up.</h1>');
+    });
+  }
+});
+</script>
 
 <!-- Google Analytics -->
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-86346202-1', 'auto');
-  ga('send', 'pageview');
+ga('create', 'UA-86346202-1', 'auto');
+ga('send', 'pageview');
 </script>
 </body>
 </html>
