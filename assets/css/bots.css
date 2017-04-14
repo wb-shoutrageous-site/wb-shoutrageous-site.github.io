@@ -25,6 +25,9 @@ input, textarea {
 li.clearfix {
   clear: both;
 }
+#body-bots.top-content {
+   padding-bottom: 50px;
+}
 #body-bots label {
     margin-top: 15px;
 }
@@ -34,7 +37,7 @@ li.clearfix {
     margin: 20px auto;
 }
 #body-bots .disclaimer-text {
-    margin: 20px 0 50px 0;
+    margin: 20px 0 15px 0;
     font-size: 12px;
 }
 #body-bots textarea {
@@ -117,7 +120,7 @@ form fieldset li.input-half-width {
 }
 
 h1.thankyou.text-center,
-#loading h1 {
+h1 #loading  {
   color: #fde540;
 }
 
