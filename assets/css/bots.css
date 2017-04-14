@@ -116,7 +116,8 @@ form fieldset li.input-half-width {
     width: 47%;
 }
 
-.thankyou {
+h1.thankyou.text-center,
+#loading h1 {
   color: #fde540;
 }
 
