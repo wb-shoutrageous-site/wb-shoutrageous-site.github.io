@@ -116,8 +116,8 @@ form fieldset li.input-half-width {
     width: 47%;
 }
 
-.realcontest-thankyou {
-  display: none;
+.thankyou {
+  color: #fde540;
 }
 
 
