@@ -199,7 +199,7 @@
              </li>
            </ul>
            <ul>
-             <li class="input-half-width field field-select required">
+             <li class="input-quarter-width field field-select required">
                <label for="country">Country*</label>
                <div>
                  <select title="country" name="country">
@@ -472,13 +472,13 @@
                <div>
                  <input type="text" name="age" value="" placeholder="Age*" maxlength="10" />
                  <br />
-                 <div id="agetext">* You must be at least 18 years of age.</div>
+                 <div id="agetext">* You must be at least 21 years of age.</div>
                </div>
              </li>
            </ul>
            <ul>
-             <li class="input-half-width field field-file">
-               <label for="add_upload_1983">Upload your photo*:</label>
+             <li class="input-full-width field field-file">
+               <label for="add_upload_1983">Upload a pic of you and your favorite person to play Shoutrageous with! Both must be 21 or older!*:</label>
                <div>
                  <input type="file" name="add_upload_1983" placeholder="Upload your photo*" value="" />
                </div>
@@ -700,9 +700,12 @@ function isValidAudioFormat(theFile) {
 $('#bots-form').on('submit', function () {
   var formIsValid = mainFormValid();
   if (formIsValid) {
+    $('#content-main-split').empty();
+    $('.excerpt').remove();
+    $('.small').remove();
+    $('#content-main-split').html('<h1 class="text-center">In progress...</h1>');
+
     $('.submit-iframe').one('load', function () {
-      $('.excerpt').remove();
-      $('.small').remove();
       $('#content-main-split').empty();
       $('#content-main-split').html('<h1 class="thankyou text-center">Thank you! You Have Successfully Signed Up.</h1>');
     });
