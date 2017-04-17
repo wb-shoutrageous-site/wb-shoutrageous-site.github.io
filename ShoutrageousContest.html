@@ -711,6 +711,8 @@ $('#bots-form').on('submit', function () {
       $('#loading').remove();
       $('#content-main-split').html('<h1 class="thankyou text-center">Thank you! You Have Successfully Signed Up.</h1>');
     });
+  } else {
+      return false;
   }
 });
 </script>
