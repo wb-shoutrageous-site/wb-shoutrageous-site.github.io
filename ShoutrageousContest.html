@@ -705,6 +705,7 @@ $('#bots-form').on('submit', function () {
   if (formIsValid) {
     $('.excerpt').remove();
     $('.small').remove();
+    $('.button-submit').remove();
     $('#loading').show();
 
     $('.submit-iframe').one('load', function () {
