@@ -134,6 +134,7 @@ img.img-gif {
 
 .download {
   width: 200px;
+  margin-right: 15px;
 }
 
 @media (max-width: 992px) {
